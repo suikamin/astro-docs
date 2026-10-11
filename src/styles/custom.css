@@ -1,0 +1,73 @@
+/* -------------------------------------------------------------
+ * Starlight カスタムスタイル (Astro / Starlight 公式風グラデーション)
+ * ------------------------------------------------------------- */
+
+/* 1. 背景全体のグラデーション (オーロラ / メッシュ風ラジアルグラデーション) */
+body {
+	/* 背景色の上に淡い光彩グラデーションを重ね、スクロール時も固定 */
+	background-image:
+		radial-gradient(circle at 50% 0%, hsla(265, 85%, 60%, 0.18) 0%, transparent 55%),
+		radial-gradient(circle at 85% 15%, hsla(225, 90%, 60%, 0.12) 0%, transparent 45%),
+		radial-gradient(circle at 15% 35%, hsla(290, 80%, 55%, 0.08) 0%, transparent 45%);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+/* ライトモード時の背景グラデーション */
+:root[data-theme='light'] body {
+	background-image:
+		radial-gradient(circle at 50% 0%, hsla(265, 90%, 70%, 0.22) 0%, transparent 55%),
+		radial-gradient(circle at 85% 15%, hsla(225, 90%, 75%, 0.15) 0%, transparent 45%);
+}
+
+/* 2. Astro 公式スターター風: 見出しタイトルの文字グラデーション */
+.hero h1 {
+	background: linear-gradient(
+		135deg,
+		var(--sl-color-white) 25%,
+		var(--sl-color-accent-high) 85%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+:root[data-theme='light'] .hero h1 {
+	background: linear-gradient(
+		135deg,
+		var(--sl-color-gray-1) 15%,
+		var(--sl-color-accent) 90%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/* 3. カードホバー & クリッカブルリンクのスタイル */
+.card-link {
+	text-decoration: none;
+	color: inherit;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.card-link:focus-visible {
+	outline: 2px solid var(--sl-color-accent);
+	outline-offset: 4px;
+	border-radius: 0.5rem;
+}
+
+.card-link > .card {
+	flex: 1;
+	cursor: pointer;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover,
+.card-link:hover > .card {
+	border-color: var(--sl-color-accent);
+	box-shadow: 0 6px 24px -2px hsla(265, 80%, 50%, 0.22);
+	transform: translateY(-2px);
+}
+
+
