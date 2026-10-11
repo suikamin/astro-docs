@@ -1,0 +1,34 @@
+# Build output
+dist/
+
+# Generated types and cache
+.astro/
+.cache/
+
+# Dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.production
+.env.development
+.env.local
+.env.*.local
+!.env.example
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.sw?
