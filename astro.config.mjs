@@ -7,6 +7,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'CTFで学ぶ',
+			favicon: '/favicon.ico',
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/suikamin' },
 				{ icon: 'blueSky', label: 'BlueSky', href: 'https://bsky.app/profile/nikodehyakuen.bsky.social'}

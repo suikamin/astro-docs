@@ -5,45 +5,45 @@ template: splash # Remove or comment out this line to display the site sidebar o
 hero:
   tagline: まずは基本から学習しましょう！
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/mnxtnumnxtnumnxt.png
   actions:
     - text: Starting Guide
       link: /step1-intro/
       icon: right-arrow
-    - text: Back to Portal
+    - text: Back to Home
       link: https://ctfgo.net
       icon: external
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from "@astrojs/starlight/components";
 
 ## 学習ロードマップ
 
 <CardGrid stagger>
-	<a href="/step1-intro/" class="card-link">
-		<Card title="Step 1: CTF入門と環境構築" icon="rocket">
-			CTFの基礎知識や競技ルールから、Linux/Dockerを使った安全な演習環境のセットアップまで。セキュリティ学習を迷わず始めるための土台を整えましょう。
-		</Card>
-	</a>
-	<a href="/step2-web/" class="card-link">
-		<Card title="Step 2: Webの成り立ちと仕組み" icon="laptop">
-			Web技術はどのように発展してきたのか。HTTPプロトコルの基本から現代のアーキテクチャまで、Webセキュリティを理解する上で欠かせない前提知識を学びましょう。
-		</Card>
-	</a>
-	<a href="/step3-web-vuln/" class="card-link">
-		<Card title="Step 3: Web脆弱性とExploit" icon="puzzle">
-			SQLi、XSS、SSRFなど、CTFで頻出する脆弱性をピックアップ。実際の出題例を解きながら、「なぜ穴が生まれるのか」「どう突かれるのか」を実践的に体感しましょう。
-		</Card>
-	</a>
-	<a href="/step4-low-layer/" class="card-link">
-		<Card title="Step 4: コンピュータが動く仕組み" icon="linux">
-			プログラムは機械の奥深くでどう処理されているのか。アセンブリ言語、コンパイラ、メモリ管理やOSの構造など、低レイヤセキュリティの根底にある仕組みを紐解きましょう。
-		</Card>
-	</a>
-	<a href="/step5-pwn-rev/" class="card-link">
-		<Card title="Step 5: バイナリ解析とPwn" icon="seti:c">
-			GDBやGhidraを用いたリバースエンジニアリングから、バッファオーバーフローやROPによる制御奪取まで。低レイヤの実践問題を通してシステムの深淵に迫りましょう。
-		</Card>
-	</a>
+  <a href="/step1-intro/" class="card-link">
+    <Card title="Step 1: CTF入門と環境構築" icon="rocket">
+      CTFの基礎知識や競技ルールから、Linux/Dockerを使った安全な演習環境のセットアップまで。セキュリティ学習を迷わず始めるための土台を整えましょう。
+    </Card>
+  </a>
+  <a href="/step2-web/" class="card-link">
+    <Card title="Step 2: Webの成り立ちと仕組み" icon="laptop">
+      Web技術はどのように発展してきたのか。HTTPプロトコルの基本から現代のアーキテクチャまで、Webセキュリティを理解する上で欠かせない前提知識を学びましょう。
+    </Card>
+  </a>
+  <a href="/step3-web-vuln/" class="card-link">
+    <Card title="Step 3: Web脆弱性とExploit" icon="puzzle">
+      SQLi、XSS、SSRFなど、CTFで頻出する脆弱性をピックアップ。実際の出題例を解きながら、「なぜ穴が生まれるのか」「どう突かれるのか」を実践的に体感しましょう。
+    </Card>
+  </a>
+  <a href="/step4-low-layer/" class="card-link">
+    <Card title="Step 4: コンピュータが動く仕組み" icon="linux">
+      プログラムは機械の奥深くでどう処理されているのか。アセンブリ言語、コンパイラ、メモリ管理やOSの構造など、低レイヤセキュリティの根底にある仕組みを紐解きましょう。
+    </Card>
+  </a>
+  <a href="/step5-pwn-rev/" class="card-link">
+    <Card title="Step 5: バイナリ解析とPwn" icon="seti:c">
+      GDBやGhidraを用いたリバースエンジニアリングから、バッファオーバーフローやROPによる制御奪取まで。低レイヤの実践問題を通してシステムの深淵に迫りましょう。
+    </Card>
+  </a>
 </CardGrid>
