@@ -17,3 +17,7 @@ description: About this site.
 </p>
 
 ## About me
+情報専攻の地方国立大学生 \
+コンタクトはSNSよりお願いします。
+- [ブログ](https://blog.ctfdemanabu.com)
+- [Bluesky](https://bsky.app/profile/nikodehyakuen.bsky.social)
