@@ -15,6 +15,10 @@ export default defineConfig({
 			customCss: ['./src/styles/custom.css'],
 			sidebar: [
 				{
+					label: 'About',
+					items: [{autogenerate: { directory: 'guides'} }],
+				},
+				{
 					label: 'CTF入門と環境構築',
 					items: [{ autogenerate: { directory: 'step1-intro' } }],
 				},
