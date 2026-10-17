@@ -1,49 +1,109 @@
 ---
-title: What's CTF ?
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: CTFで学ぶWeb・コンピュータ・情報セキュリティ
+description: Get started learning Information Security with CTF.
+template: splash
 hero:
-  tagline: まずは基本から学習しましょう！
+  title: 'CTFで学ぶ<br />Web・コンピュータ・<br />情報セキュリティ'
+  tagline: What's Information Security?
   image:
     file: ../../assets/mnxtnumnxtnumnxt.png
   actions:
-    - text: Starting Guide
+    - text: さぁ、始めよう
       link: /step1-intro/
       icon: right-arrow
-    - text: Back to Home
-      link: https://ctfdemanabu.com
+    - text: このサイトについて
+      link: /guides/
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from "@astrojs/starlight/components";
 
-## 学習ロードマップ
+<div class="concept-container">
+  <div class="concept-header">
+    <span class="cyber-badge">PHILOSOPHY</span>
+    <h2 class="concept-title">あなたは本当に「情報セキュリティ」を理解していますか？</h2>
+  </div>
+
+  <blockquote class="concept-quote">
+    「コンピュータやWebはどうやって生まれ、裏側でどう動いているのか」
+  </blockquote>
+
+  <div class="concept-body">
+    <p>
+      セキュリティの脆弱性を学ぶとき、ツールの使い方や表面的な対策手順を覚えるだけでは、本当の理解にはつながりません。
+    </p>
+    <p>
+      ブラウザの向こう側で、Web技術がどう発展してきたのか。画面の裏側で、コンピュータはなぜアプリケーションを実行できるのか。
+      <strong>「なぜ動くのか」「なぜ穴が生まれるのか」</strong>——。
+      仕組みから根本的に理解することで、変化の早い現代でも応用が利く本質的な知識が身につくはずです。
+    </p>
+    <p>
+      当サイト<strong>『CTFで学ぶ』</strong>では、歴史から現代の最新技術、そして脆弱性の原理まで、基本から応用への流れを体系的に理解できるようにまとめています。
+    </p>
+  </div>
+</div>
+
+<div class="roadmap-header">
+  <span class="cyber-badge">CURRICULUM</span>
+  <h2>学習ロードマップ</h2>
+  <p class="roadmap-subtitle">
+    基礎となる環境構築から、Web・低レイヤーの探求、そして実践的なExploitまでを網羅する5つのステップ
+  </p>
+</div>
 
 <CardGrid stagger>
-  <a href="/step1-intro/" class="card-link">
+  <a href="/step1-intro/" class="card-link" style="--card-accent: #f59e0b;">
     <Card title="Step 1: CTF入門と環境構築" icon="rocket">
-      CTFの基礎知識や競技ルールから、Linux/Dockerを使った安全な演習環境のセットアップまで。セキュリティ学習を迷わず始めるための土台を整えましょう。
+      <div class="card-content">
+        <p>CTFの基礎知識や競技ルールから、Linux/Dockerを使った安全な演習環境のセットアップまで。セキュリティ学習を迷わず始めるための土台を整えましょう。</p>
+        <span class="card-action">入門ガイドを読む →</span>
+      </div>
     </Card>
   </a>
-  <a href="/step2-web/" class="card-link">
+  <a href="/step2-web/" class="card-link" style="--card-accent: #0ea5e9;">
     <Card title="Step 2: Webの成り立ちと仕組み" icon="laptop">
-      Web技術はどのように発展してきたのか。HTTPプロトコルの基本から現代のアーキテクチャまで、Webセキュリティを理解する上で欠かせない前提知識を学びましょう。
+      <div class="card-content">
+        <p>Web技術はどのように発展してきたのか。HTTPプロトコルの基本から現代のアーキテクチャまで、Webセキュリティを理解する上で欠かせない前提知識を学びましょう。</p>
+        <span class="card-action">Web概論を読む →</span>
+      </div>
     </Card>
   </a>
-  <a href="/step3-web-vuln/" class="card-link">
+  <a href="/step3-web-vuln/" class="card-link" style="--card-accent: #f43f5e;">
     <Card title="Step 3: Web脆弱性とExploit" icon="puzzle">
-      SQLi、XSS、SSRFなど、CTFで頻出する脆弱性をピックアップ。実際の出題例を解きながら、「なぜ穴が生まれるのか」「どう突かれるのか」を実践的に体感しましょう。
+      <div class="card-content">
+        <p>SQLi、XSS、SSRFなど、CTFで頻出する脆弱性をピックアップ。実際の出題例を解きながら、「なぜ穴が生まれるのか」「どう突かれるのか」を実践的に体感しましょう。</p>
+        <span class="card-action">脆弱性検証を読む →</span>
+      </div>
     </Card>
   </a>
-  <a href="/step4-low-layer/" class="card-link">
+  <a href="/step4-low-layer/" class="card-link" style="--card-accent: #10b981;">
     <Card title="Step 4: コンピュータが動く仕組み" icon="linux">
-      プログラムは機械の奥深くでどう処理されているのか。アセンブリ言語、コンパイラ、メモリ管理やOSの構造など、低レイヤセキュリティの根底にある仕組みを紐解きましょう。
+      <div class="card-content">
+        <p>プログラムは機械の奥深くでどう処理されているのか。アセンブリ言語、コンパイラ、メモリ管理やOSの構造など、低レイヤセキュリティの根底にある仕組みを紐解きましょう。</p>
+        <span class="card-action">低レイヤー概論を読む →</span>
+      </div>
     </Card>
   </a>
-  <a href="/step5-pwn-rev/" class="card-link">
+  <a href="/step5-pwn-rev/" class="card-link" style="--card-accent: #a855f7;">
     <Card title="Step 5: バイナリ解析とPwn" icon="seti:c">
-      GDBやGhidraを用いたリバースエンジニアリングから、バッファオーバーフローやROPによる制御奪取まで。低レイヤの実践問題を通してシステムの深淵に迫りましょう。
+      <div class="card-content">
+        <p>GDBやGhidraを用いたリバースエンジニアリングから、バッファオーバーフローやROPによる制御奪取まで。低レイヤの実践問題を通してシステムの深淵に迫りましょう。</p>
+        <span class="card-action">バイナリ攻略を読む →</span>
+      </div>
     </Card>
   </a>
 </CardGrid>
+
+<div class="cta-card">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h3>準備はできましたか？</h3>
+      <p>まずは Step 1 の環境構築から、最初の一歩を踏み出しましょう。</p>
+    </div>
+    <a href="/step1-intro/" class="cta-btn">
+      <span>Step 1 を開始する</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>

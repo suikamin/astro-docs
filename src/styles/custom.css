@@ -1,10 +1,9 @@
 /* -------------------------------------------------------------
- * Starlight カスタムスタイル (Astro / Starlight 公式風グラデーション)
+ * Starlight カスタムスタイル (Astro / Starlight 公式風グラデーション & 高品位デザイン)
  * ------------------------------------------------------------- */
 
 /* 1. 背景全体のグラデーション (オーロラ / メッシュ風ラジアルグラデーション) */
 body {
-	/* 背景色の上に淡い光彩グラデーションを重ね、スクロール時も固定 */
 	background-image:
 		radial-gradient(circle at 50% 0%, hsla(265, 85%, 60%, 0.18) 0%, transparent 55%),
 		radial-gradient(circle at 85% 15%, hsla(225, 90%, 60%, 0.12) 0%, transparent 45%),
@@ -21,15 +20,20 @@ body {
 		radial-gradient(circle at 85% 15%, hsla(225, 90%, 75%, 0.15) 0%, transparent 45%);
 }
 
-/* 2. Astro 公式スターター風: 見出しタイトルの文字グラデーション */
+/* 2. Hero セクションの装飾（タイトル・タグライン・画像） */
 .hero h1 {
 	background: linear-gradient(
 		135deg,
-		var(--sl-color-white) 25%,
-		var(--sl-color-accent-high) 85%
+		var(--sl-color-white) 30%,
+		var(--sl-color-accent-high) 95%
 	);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	letter-spacing: -0.015em;
+	line-height: 1.3 !important;
+	font-size: clamp(1.85rem, 4vw, 3.25rem) !important;
+	word-break: keep-all;
+	overflow-wrap: break-word;
 }
 
 :root[data-theme='light'] .hero h1 {
@@ -42,9 +46,158 @@ body {
 	-webkit-text-fill-color: transparent;
 }
 
-/* 3. カードホバー & クリッカブルリンクのスタイル */
+/* タグライン: コード・サイバー感のあるモノスペース & プレフィックス */
+.hero .tagline {
+	font-family: var(--sl-font-system-mono) !important;
+	font-size: clamp(var(--sl-text-sm), 2vw, var(--sl-text-lg)) !important;
+	font-weight: 600;
+	color: var(--sl-color-accent-high) !important;
+	letter-spacing: 0.04em;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: 0.25rem;
+}
+
+.hero .tagline::before {
+	content: '//';
+	color: var(--sl-color-accent);
+	font-weight: 800;
+	opacity: 0.85;
+}
+
+:root[data-theme='light'] .hero .tagline {
+	color: var(--sl-color-accent) !important;
+}
+
+.hero img {
+	filter: drop-shadow(0 15px 35px hsla(265, 85%, 50%, 0.25));
+	border-radius: 1.25rem;
+	transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.hero img:hover {
+	transform: translateY(-4px) scale(1.02);
+	filter: drop-shadow(0 20px 45px hsla(265, 85%, 50%, 0.38));
+}
+
+/* 3. サイバーバッジ（セクション見出し用タグ） */
+.cyber-badge {
+	display: inline-block;
+	font-family: var(--sl-font-system-mono);
+	font-size: var(--sl-text-xs);
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	padding: 0.25rem 0.75rem;
+	border-radius: 9999px;
+	color: var(--sl-color-accent-high);
+	background: hsla(265, 85%, 60%, 0.12);
+	border: 1px solid hsla(265, 85%, 60%, 0.3);
+	margin-bottom: 0.75rem;
+	text-transform: uppercase;
+}
+
+/* 4. コンセプト / 導入セクション (Concept Container) */
+.concept-container {
+	margin-top: 3.5rem;
+	margin-bottom: 4rem;
+	padding: 2.25rem 2rem;
+	border-radius: 1.25rem;
+	background: hsla(224, 20%, 12%, 0.65);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border: 1px solid hsla(265, 70%, 65%, 0.2);
+	box-shadow: 0 12px 36px -10px hsla(0, 0%, 0%, 0.4), inset 0 1px 0 hsla(0, 0%, 100%, 0.08);
+	position: relative;
+	overflow: hidden;
+}
+
+:root[data-theme='light'] .concept-container {
+	background: hsla(0, 0%, 100%, 0.75);
+	border-color: hsla(265, 60%, 65%, 0.25);
+	box-shadow: 0 12px 36px -10px hsla(220, 20%, 60%, 0.2), inset 0 1px 0 hsla(0, 0%, 100%, 0.8);
+}
+
+.concept-container::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background: linear-gradient(90deg, transparent, var(--sl-color-accent), transparent);
+}
+
+.concept-title {
+	font-size: clamp(var(--sl-text-xl), 3vw, var(--sl-text-3xl)) !important;
+	font-weight: 700;
+	line-height: 1.35;
+	margin-top: 0.25rem !important;
+	margin-bottom: 1.25rem !important;
+	color: var(--sl-color-white);
+}
+
+.concept-quote {
+	margin: 1.25rem 0 !important;
+	padding: 0.85rem 1.25rem !important;
+	border-left: 3px solid var(--sl-color-accent) !important;
+	background: hsla(265, 80%, 50%, 0.08);
+	border-radius: 0 0.5rem 0.5rem 0;
+	font-size: clamp(var(--sl-text-sm), 1.8vw, var(--sl-text-base));
+	font-weight: 600;
+	color: var(--sl-color-accent-high);
+}
+
+:root[data-theme='light'] .concept-quote {
+	background: hsla(265, 80%, 60%, 0.08);
+	color: var(--sl-color-accent-high);
+}
+
+.concept-body {
+	font-size: var(--sl-text-base);
+	line-height: 1.85;
+	color: var(--sl-color-gray-2);
+}
+
+.concept-body p {
+	margin-bottom: 1rem !important;
+}
+
+.concept-body p:last-child {
+	margin-bottom: 0 !important;
+}
+
+.concept-body strong {
+	color: var(--sl-color-white);
+	font-weight: 600;
+}
+
+/* 5. ロードマップヘッダー (Roadmap Header) */
+.roadmap-header {
+	text-align: center;
+	margin-top: 4.5rem;
+	margin-bottom: 2.5rem;
+}
+
+.roadmap-header h2 {
+	font-size: clamp(var(--sl-text-2xl), 4vw, var(--sl-text-4xl)) !important;
+	font-weight: 700;
+	margin-top: 0.25rem !important;
+	margin-bottom: 0.75rem !important;
+	color: var(--sl-color-white);
+}
+
+.roadmap-subtitle {
+	font-size: var(--sl-text-base);
+	color: var(--sl-color-gray-3);
+	max-width: 48ch;
+	margin-inline: auto !important;
+	line-height: 1.6;
+}
+
+/* 6. クリッカブルカード & ホバーエフェクト */
 .card-link {
-	text-decoration: none;
+	text-decoration: none !important;
 	color: inherit;
 	display: flex;
 	flex-direction: column;
@@ -52,22 +205,171 @@ body {
 }
 
 .card-link:focus-visible {
-	outline: 2px solid var(--sl-color-accent);
+	outline: 2px solid var(--card-accent, var(--sl-color-accent));
 	outline-offset: 4px;
-	border-radius: 0.5rem;
+	border-radius: 0.75rem;
 }
 
 .card-link > .card {
 	flex: 1;
 	cursor: pointer;
-	transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+	border-radius: 0.85rem;
+	background: hsla(224, 18%, 11%, 0.7);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid hsla(224, 15%, 25%, 0.6);
+	transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+	position: relative;
+	overflow: hidden;
 }
 
-.card:hover,
+:root[data-theme='light'] .card-link > .card {
+	background: hsla(0, 0%, 100%, 0.85);
+	border-color: hsla(220, 15%, 85%, 0.8);
+}
+
+/* カード上部のアクセントカラーボーダー */
+.card-link > .card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background: var(--card-accent, var(--sl-color-accent));
+	opacity: 0.45;
+	transition: opacity 0.25s ease, height 0.25s ease;
+}
+
+/* カード内アイコンのカラーリング */
+.card-link > .card .icon {
+	border-color: var(--card-accent, var(--sl-color-accent)) !important;
+	color: var(--card-accent, var(--sl-color-white)) !important;
+	background-color: color-mix(in srgb, var(--card-accent, var(--sl-color-accent)) 16%, transparent) !important;
+}
+
 .card-link:hover > .card {
-	border-color: var(--sl-color-accent);
-	box-shadow: 0 6px 24px -2px hsla(265, 80%, 50%, 0.22);
-	transform: translateY(-2px);
+	border-color: var(--card-accent, var(--sl-color-accent));
+	box-shadow: 0 12px 30px -6px hsla(0, 0%, 0%, 0.5), 0 0 22px -3px var(--card-accent, var(--sl-color-accent));
+	transform: translateY(-4px);
 }
 
+.card-link:hover > .card::before {
+	opacity: 1;
+	height: 4px;
+}
 
+.card-link:hover .title {
+	color: var(--card-accent, var(--sl-color-white));
+	transition: color 0.2s ease;
+}
+
+.card-content {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	height: 100%;
+	justify-content: space-between;
+}
+
+.card-content p {
+	margin: 0 !important;
+	color: var(--sl-color-gray-2);
+	line-height: 1.7;
+}
+
+.card-action {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	font-size: var(--sl-text-sm);
+	font-weight: 600;
+	color: var(--card-accent, var(--sl-color-accent-high));
+	transition: transform 0.2s ease, opacity 0.2s ease;
+	margin-top: 0.5rem;
+	opacity: 0.85;
+}
+
+.card-link:hover .card-action {
+	transform: translateX(4px);
+	opacity: 1;
+}
+
+/* 7. ボトム CTA バナー (Call To Action Card) */
+.cta-card {
+	margin-top: 5rem;
+	margin-bottom: 2rem;
+	padding: 2.25rem 2rem;
+	border-radius: 1.25rem;
+	background: linear-gradient(
+		135deg,
+		hsla(265, 80%, 25%, 0.4) 0%,
+		hsla(224, 25%, 12%, 0.8) 100%
+	);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border: 1px solid hsla(265, 70%, 60%, 0.3);
+	box-shadow: 0 15px 40px -10px hsla(265, 80%, 40%, 0.25);
+}
+
+:root[data-theme='light'] .cta-card {
+	background: linear-gradient(
+		135deg,
+		hsla(265, 90%, 95%, 0.9) 0%,
+		hsla(220, 30%, 98%, 0.95) 100%
+	);
+	border-color: hsla(265, 60%, 75%, 0.5);
+	box-shadow: 0 15px 40px -10px hsla(265, 60%, 70%, 0.25);
+}
+
+.cta-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 1.5rem;
+}
+
+@media (min-width: 48rem) {
+	.cta-inner {
+		flex-direction: row;
+		text-align: left;
+		justify-content: space-between;
+	}
+}
+
+.cta-text h3 {
+	font-size: var(--sl-text-2xl) !important;
+	font-weight: 700;
+	margin: 0 0 0.35rem 0 !important;
+	color: var(--sl-color-white);
+}
+
+.cta-text p {
+	margin: 0 !important;
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-2);
+}
+
+.cta-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.85rem 1.65rem;
+	border-radius: 9999px;
+	font-size: var(--sl-text-base);
+	font-weight: 700;
+	color: #ffffff !important;
+	background: linear-gradient(135deg, hsl(265, 85%, 60%), hsl(235, 90%, 60%));
+	box-shadow: 0 4px 15px hsla(265, 80%, 50%, 0.4);
+	text-decoration: none !important;
+	transition: all 0.25s ease;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+.cta-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px hsla(265, 80%, 50%, 0.55);
+	filter: brightness(1.1);
+}
